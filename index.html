@@ -3,53 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>써포텔 챗봇 선택</title>
+  <title>써포텔 캐릭터 선택</title>
   <style>
     body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
-      height: 100vh;
-      margin: 0;
-      background-color: #f9f9ff;
+      background-color: #ffffff;
       font-family: 'Inter', sans-serif;
     }
 
     h1 {
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      font-size: 2rem;
       color: #333;
     }
 
     .button-container {
       display: flex;
       flex-direction: column;
-      gap: 15px;
+      gap: 20px;
+      width: 80%;
+      max-width: 400px;
     }
 
-    button {
-      padding: 15px 30px;
+    .chat-button {
+      padding: 15px;
       font-size: 1.2rem;
+      font-weight: bold;
       border: none;
       border-radius: 12px;
-      background-color: #dda6ff;
-      color: white;
       cursor: pointer;
-      transition: background-color 0.3s;
+      transition: transform 0.2s;
     }
 
-    button:hover {
-      background-color: #c185f5;
+    .chat-button:hover {
+      transform: scale(1.05);
+    }
+
+    .summer {
+      background-color: #f5e663;
+      color: #555;
+    }
+
+    .popo {
+      background-color: #dda6ff;
+      color: white;
+    }
+
+    .telly {
+      background-color: #8bd3ff;
+      color: #003366;
     }
   </style>
 </head>
 <body>
-  <h1>챗봇을 선택하세요 🌸</h1>
-
+  <h1>써포텔 캐릭터를 선택하세요</h1>
   <div class="button-container">
-    <button onclick="location.href='https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/04/12/08/20250412083650-B9OG8S56.json'">써머 챗봇</button>
-    <button onclick="location.href='[포포 챗봇 링크]'">포포 챗봇</button>
-    <button onclick="location.href='[텔리 챗봇 링크]'">텔리 챗봇</button>
+    <button class="chat-button summer" onclick="location.href='https://cdn.botpress.cloud/webchat/v2.4/shareable.html?configUrl=https://files.bpcontent.cloud/2025/04/12/08/20250412083650-B9OG8S56.json'">써머 (Summer)</button>
+    <button class="chat-button popo" onclick="location.href='https://your-popo-chatbot-link'">포포 (Popo)</button>
+    <button class="chat-button telly" onclick="location.href='https://your-telly-chatbot-link'">텔리 (Telly)</button>
   </div>
 </body>
 </html>
