@@ -1,17 +1,95 @@
 <!DOCTYPE html>
-<html>
+<html lang="ko">
 <head>
-  <title>써포텔</title>
+  <meta charset="UTF-8">
+  <title>포포 챗봇</title>
+  <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
+  <!--<link rel="stylesheet" href="style.css"> -->
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100%;
+      overflow: hidden;
+      background-color: #ffffff;
+    }
+
+    #webchat {
+      width: 100vw;
+      height: 100vh;
+    }
+
+    #webchat .bpWebchat {
+      position: unset;
+      width: 100%;
+      height: 100%;
+      max-height: 100%;
+      max-width: 100%;
+    }
+
+    #webchat .bpFab {
+      display: none !important;
+    }
+
+        /* 전체 글자 크게 */
+    #webchat * {
+      font-size: 1.3rem !important;
+    }
+
+    /* 입력창과 전송 버튼 크기 키우기 */
+    div.bpComposerInputContainer {
+      padding: 14px 18px !important;
+      font-size: 1.4rem !important;
+    }
+
+    button.bpComposerSendButton {
+      transform: scale(1.6) !important;
+      margin-left: 10px;
+    }
+
+
+    /* 초기 메세지, 시스템 텍스트도 더 크고 여백 있게 */
+    div.bpMessageContent {
+      font-size: 1.3rem !important;
+      line-height: 1.8 !important;
+      padding: 12px 16px !important;
+    }
+
+    /* 헤더 영역 조정 */
+    div.bpHeaderContentContainer {
+      padding: 16px !important;
+      font-size: 1.4rem !important;
+    }
+
+  </style>
 </head>
 <body>
-  <!-- Other content -->
+  <div id="webchat"></div>
 
-  <!-- ① Botpress 웹챗 로딩 스크립트 -->
-  <script src="https://cdn.botpress.cloud/webchat/v2.3/inject.js"></script>
+  <script>
+    window.botpress.on("webchat:ready", () => {
+      window.botpress.open(); // 페이지 로드시 자동 열기
+    });
 
-
-  <!-- ② 포포의 개별 설정/정보가 담긴 JS 파일 -->
-  <script src="https://files.bpcontent.cloud/2025/04/12/08/20250412083650-TJL7ZUXP.js"></script>
-
+    window.botpress.init({
+      botId: "0b88e0b6-433e-433b-bd86-3edcd3fe7949",
+      clientId: "89de9d70-113a-4b06-a92f-11137ca2629a",
+      selector: "#webchat",
+      configuration: {
+        composerPlaceholder: "아무 언어로 대화를 시작해보세요",
+        botName: "포포 (POPO)",
+        botAvatar: "https://files.bpcontent.cloud/2025/04/12/08/20250412085355-NUQPUUHA.png",
+        botDescription: "바람처럼 꽃처럼 너는 있는 그대로 완벽해!",
+        color: "#dda6ff",
+        variant: "solid",
+        themeMode: "light",
+        fontFamily: "inter",
+        radius: 3,
+        showPoweredBy: true,
+        allowFileUpload: false
+      }
+    });
+  </script>
 </body>
 </html>
