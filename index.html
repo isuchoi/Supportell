@@ -5,11 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>포포 챗봇</title>
   <link rel="stylesheet" href="style.css">
-  <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
 </head>
 <body>
   <div id="webchat"></div>
 
+  <!-- inject.js를 body 안 가장 마지막에 -->
+  <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
   <script>
     window.botpress.on("webchat:ready", () => {
       window.botpress.open();
