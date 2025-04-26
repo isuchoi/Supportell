@@ -1,39 +1,55 @@
 <!DOCTYPE html>
 <html lang="ko">
-  <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>포포 챗봇</title>
-    <link rel="stylesheet" href="style.css">
-  </head>
-  <body>
-    <div id="webchat"></div>
-  
-    <!-- inject.js를 body 안 가장 마지막에 -->
-    <script src="https://cdn.botpress.cloud/webchat/v2.4/inject.js"></script>
-    <script>
-      window.botpress.on("webchat:ready", () => {
-        window.botpress.open();
-      });
-  
-      window.botpress.init({
-        botId: "0b88e0b6-433e-433b-bd86-3edcd3fe7949",
-        clientId: "89de9d70-113a-4b06-a92f-11137ca2629a",
-        selector: "#webchat",
-        configuration: {
-          composerPlaceholder: "아무 언어로 대화를 시작해보세요",
-          botName: "포포 (POPO)",
-          botAvatar: "https://files.bpcontent.cloud/2025/04/12/08/20250412085355-NUQPUUHA.png",
-          botDescription: "바람처럼 꽃처럼 너는 있는 그대로 완벽해!",
-          color: "#dda6ff",
-          variant: "solid",
-          themeMode: "light",
-          fontFamily: "inter",
-          radius: 3,
-          showPoweredBy: true,
-          allowFileUpload: false
-        }
-      });
-    </script>
-  </body>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>써포텔 챗봇 선택</title>
+  <style>
+    body {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      background-color: #f9f9ff;
+      font-family: 'Inter', sans-serif;
+    }
+
+    h1 {
+      margin-bottom: 30px;
+      color: #333;
+    }
+
+    .button-container {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    button {
+      padding: 15px 30px;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 12px;
+      background-color: #dda6ff;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #c185f5;
+    }
+  </style>
+</head>
+<body>
+  <h1>챗봇을 선택하세요 🌸</h1>
+
+  <div class="button-container">
+    <button onclick="location.href='[써머 챗봇 링크]'">써머 챗봇</button>
+    <button onclick="location.href='[포포 챗봇 링크]'">포포 챗봇</button>
+    <button onclick="location.href='[텔리 챗봇 링크]'">텔리 챗봇</button>
+  </div>
+</body>
 </html>
